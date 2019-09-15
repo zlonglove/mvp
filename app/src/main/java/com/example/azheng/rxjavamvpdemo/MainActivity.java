@@ -1,6 +1,7 @@
 package com.example.azheng.rxjavamvpdemo;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.widget.Toast;
@@ -12,7 +13,6 @@ import com.example.azheng.rxjavamvpdemo.presenter.MainPresenter;
 import com.example.azheng.rxjavamvpdemo.util.ProgressDialog;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.View {
@@ -47,11 +47,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     }
 
     @Override
-    public void onSuccess(BaseObjectBean bean) {
-        Toast.makeText(this, bean.getErrorMsg(), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
     public void showLoading() {
         ProgressDialog.getInstance().show(this);
     }
@@ -62,15 +57,21 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     }
 
     @Override
+    public void onSuccess(BaseObjectBean bean) {
+        Toast.makeText(this, bean.getErrorMsg(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void onError(Throwable throwable) {
         Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, PayActivity.class);
+        startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
     }
 
     @OnClick(R.id.btn_signin_login)

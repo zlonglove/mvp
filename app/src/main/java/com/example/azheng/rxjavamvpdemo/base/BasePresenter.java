@@ -1,12 +1,7 @@
 package com.example.azheng.rxjavamvpdemo.base;
 
 
-
 /**
- * @author azheng
- * @date 2018/4/24.
- * GitHub：https://github.com/RookieExaminer
- * Email：wei.azheng@foxmail.com
  * Description：
  */
 public class BasePresenter<V extends BaseView> {

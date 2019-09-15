@@ -9,10 +9,6 @@ import com.uber.autodispose.AutoDisposeConverter;
 import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
 /**
- * @author azheng
- * @date 2018/4/24.
- * GitHub：https://github.com/RookieExaminer
- * Email：wei.azheng@foxmail.com
  * Description：
  */
 public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActivity implements BaseView {

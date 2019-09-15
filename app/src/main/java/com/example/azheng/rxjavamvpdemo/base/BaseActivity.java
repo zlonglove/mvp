@@ -13,15 +13,9 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * @author azheng
- * @date 2018/4/24.
- * GitHub：https://github.com/RookieExaminer
- * Email：wei.azheng@foxmail.com
  * Description：
  */
 public abstract class BaseActivity extends AppCompatActivity {
-
-
     private Unbinder unbinder;
 
     @Override
